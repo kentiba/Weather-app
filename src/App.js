@@ -90,8 +90,6 @@ class App extends React.Component {
     } else {
       this.setState({ error: true, notFoundError: false });
     }
-
-    // seting iconss
   };
 
   render() {

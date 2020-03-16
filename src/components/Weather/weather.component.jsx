@@ -1,5 +1,6 @@
 import React from "react";
 import { MaxminTemp } from "../utils/utils.component";
+import Error from "../Error/error.component";
 import "./weather.style.css";
 
 const Weather = ({
@@ -34,7 +35,7 @@ const Weather = ({
       </div>
     );
   } else {
-    return <h1>Sorry.......</h1>;
+    return <Error />;
   }
 };
 
