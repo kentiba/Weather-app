@@ -8,6 +8,7 @@ body {
   background: url("./assets/blur-background-1187974.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh;
 }
 
 code {

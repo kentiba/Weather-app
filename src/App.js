@@ -2,6 +2,7 @@ import React from "react";
 import Form from "./components/Form/form.component";
 import Weather from "./components/Weather/weather.component";
 import { WeatherIcons } from "./components/utils/utils.component";
+
 import "./App.css";
 
 //bootstrap
@@ -60,9 +61,11 @@ class App extends React.Component {
   };
 
   getWeather = async e => {
-    e.preventDefault();
-    const country = e.target.elements.country.value;
-    const city = e.target.elements.city.value;
+    const city = e.address_components[0].long_name;
+    const country =
+      e.address_components.length > 3
+        ? e.address_components[3].long_name
+        : e.address_components[e.address_components.length - 1].long_name;
     if (country && city) {
       const api_call = await fetch(
         `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${Api_Key}`

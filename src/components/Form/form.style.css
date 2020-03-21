@@ -1,12 +1,13 @@
-form {
-  margin-top: 3rem;
+.form-container {
+  margin-top: 5rem;
+}
+.form-input {
+  width: 35%;
+  margin: 0 auto;
 }
 
-form input[name="city"],
-form input[name="country"] {
-  background-color: transparent;
-  color: white;
-  border: none;
-  border-bottom: 2px solid whitesmoke;
-  border-radius: 0;
+@media only screen and (max-width: 900px) {
+  .form-input {
+    width: 60% !important;
+  }
 }
