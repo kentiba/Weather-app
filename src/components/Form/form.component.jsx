@@ -5,7 +5,7 @@ import "./form.style.css";
 
 const Form = props => {
   return (
-    <div className="form-container">
+    <React.Fragment>
       <div className="form-input justify-content-center">
         <Autocomplete
           style={{
@@ -14,6 +14,7 @@ const Form = props => {
             color: "white",
             border: "none",
             width: "100%",
+            marginTop: "5rem",
             fontSize: "1.5rem",
             borderBottom: " 2px solid orange",
             borderRadius: 0
@@ -26,7 +27,7 @@ const Form = props => {
       </div>
 
       <div>{props.error ? <Error /> : ""}</div>
-    </div>
+    </React.Fragment>
   );
 };
 

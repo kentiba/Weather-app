@@ -1,9 +1,7 @@
-.form-container {
-  margin-top: 5rem;
-}
 .form-input {
   width: 35%;
   margin: 0 auto;
+  filter: brightness(25%);
 }
 
 @media only screen and (max-width: 900px) {

@@ -2,8 +2,7 @@ import React from "react";
 import Form from "./components/Form/form.component";
 import Weather from "./components/Weather/weather.component";
 import { WeatherIcons } from "./components/utils/utils.component";
-
-import "./App.css";
+import { AppContainer } from "./App.styles";
 
 //bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -24,7 +23,8 @@ class App extends React.Component {
     temp_min: null,
     description: "",
     error: false,
-    notFoundError: false
+    notFoundError: false,
+    weatherId: null
   };
 
   calCelsius = temp => {
@@ -47,6 +47,7 @@ class App extends React.Component {
         this.setState({ icon: icons.Snow });
         break;
       case rangeId >= 701 && rangeId <= 781:
+        //atomosphere === sunny
         this.setState({ icon: icons.Atmosphere });
         break;
       case rangeId === 800:
@@ -81,7 +82,8 @@ class App extends React.Component {
           temp_min: this.calCelsius(main.temp_min),
           description: weather[0].description,
           error: false,
-          notFoundError: false
+          notFoundError: false,
+          weatherId: weather[0].id
         });
         this.GetWeatherIcon(WeatherIcons, weather[0].id);
       } else {
@@ -104,10 +106,12 @@ class App extends React.Component {
       temp_max,
       temp_min,
       description,
-      notFoundError
+      notFoundError,
+      weatherId
     } = this.state;
+    console.log(weatherId);
     return (
-      <div className="App">
+      <AppContainer id={weatherId}>
         <Form loadweather={this.getWeather} error={error} />
         <Weather
           cityname={city}
@@ -118,7 +122,7 @@ class App extends React.Component {
           description={description}
           error={notFoundError}
         />
-      </div>
+      </AppContainer>
     );
   }
 }
