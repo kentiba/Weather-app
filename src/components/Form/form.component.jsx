@@ -1,30 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import Error from "../Error/error.component";
-import Autocomplete from "react-google-autocomplete";
-import "./form.style.css";
+import { AutocompleteComponent, FormInput } from "./form.styles";
 
 const Form = props => {
+  const [input, setInput] = useState("");
+
   return (
     <React.Fragment>
-      <div className="form-input justify-content-center">
-        <Autocomplete
-          style={{
-            backgroundColor: "transparent",
-            textAlign: "center",
-            color: "white",
-            border: "none",
-            width: "100%",
-            marginTop: "5rem",
-            fontSize: "1.5rem",
-            borderBottom: " 2px solid orange",
-            borderRadius: 0
-          }}
+      <FormInput>
+        <AutocompleteComponent
           onPlaceSelected={place => {
+            setInput(place.formatted_address);
             props.loadweather(place);
-            console.log(place);
           }}
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          onFocus={e => setInput("")}
         />
-      </div>
+      </FormInput>
 
       <div>{props.error ? <Error /> : ""}</div>
     </React.Fragment>

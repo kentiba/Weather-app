@@ -1,13 +1,13 @@
 import React from "react";
-import "./error.style.css";
+import { ErrorComponent } from "./error.styles";
 
 const error = () => {
   return (
-    <div className="error">
+    <ErrorComponent>
       <div className="alert alert-danger justify-content-center" role="alert">
         Please Enter a valid City and Country...!
       </div>
-    </div>
+    </ErrorComponent>
   );
 };
 

@@ -39,11 +39,19 @@ const renderBackgroundImage = props => {
 export const AppContainer = styled.div`
   margin: 0;
   padding: 0;
+  height: 100vh;
+  text-align: center;
+`;
+
+export const Image = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100%;
   background: url(${renderBackgroundImage});
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
-  text-align: center;
   transition: background 0.2s linear;
   -webkit-transition: background 0.2s linear;
+  z-index: -1;
+  filter: brightness(60%);
 `;

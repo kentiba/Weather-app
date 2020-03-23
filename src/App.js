@@ -2,7 +2,7 @@ import React from "react";
 import Form from "./components/Form/form.component";
 import Weather from "./components/Weather/weather.component";
 import { WeatherIcons } from "./components/utils/utils.component";
-import { AppContainer } from "./App.styles";
+import { AppContainer, Image } from "./App.styles";
 
 //bootstrap
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -109,9 +109,9 @@ class App extends React.Component {
       notFoundError,
       weatherId
     } = this.state;
-    console.log(weatherId);
     return (
-      <AppContainer id={weatherId}>
+      <AppContainer>
+        <Image id={weatherId} />
         <Form loadweather={this.getWeather} error={error} />
         <Weather
           cityname={city}
