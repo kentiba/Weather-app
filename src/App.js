@@ -23,7 +23,6 @@ class App extends React.Component {
     temp_min: null,
     description: "",
     error: false,
-    notFoundError: false,
     weatherId: null
   };
 
@@ -62,38 +61,40 @@ class App extends React.Component {
   };
 
   getWeather = async e => {
-    const city = e.address_components[0].long_name;
-    const country =
-      e.address_components.length > 3
-        ? e.address_components[3].long_name
-        : e.address_components[e.address_components.length - 1].long_name;
-    if (country && city) {
-      const api_call = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${Api_Key}`
-      );
-      const { name, sys, weather, main } = await api_call.json();
-      if (name !== undefined) {
-        this.setState({
-          city: `${name}, ${sys.country}`,
-          country: sys.country,
-          main: weather[0].main,
-          celsius: this.calCelsius(main.temp),
-          temp_max: this.calCelsius(main.temp_max),
-          temp_min: this.calCelsius(main.temp_min),
-          description: weather[0].description,
-          error: false,
-          notFoundError: false,
-          weatherId: weather[0].id
-        });
-        this.GetWeatherIcon(WeatherIcons, weather[0].id);
+    if (e.address_components) {
+      const city = e.address_components[0].long_name;
+      const country =
+        e.address_components.length > 3
+          ? e.address_components[3].long_name
+          : e.address_components[e.address_components.length - 1].long_name;
+      if (country && city) {
+        const api_call = await fetch(
+          `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${Api_Key}`
+        );
+        const { name, sys, weather, main } = await api_call.json();
+        if (name !== undefined) {
+          this.setState({
+            city: `${name}, ${sys.country}`,
+            country: sys.country,
+            main: weather[0].main,
+            celsius: this.calCelsius(main.temp),
+            temp_max: this.calCelsius(main.temp_max),
+            temp_min: this.calCelsius(main.temp_min),
+            description: weather[0].description,
+            error: false,
+            weatherId: weather[0].id
+          });
+          this.GetWeatherIcon(WeatherIcons, weather[0].id);
+        } else {
+          this.setState({
+            error: true
+          });
+        }
       } else {
-        this.setState({
-          error: false,
-          notFoundError: true
-        });
+        this.setState({ error: true });
       }
     } else {
-      this.setState({ error: true, notFoundError: false });
+      this.setState({ error: true });
     }
   };
 
@@ -106,13 +107,12 @@ class App extends React.Component {
       temp_max,
       temp_min,
       description,
-      notFoundError,
       weatherId
     } = this.state;
     return (
       <AppContainer>
         <Image id={weatherId} />
-        <Form loadweather={this.getWeather} error={error} />
+        <Form loadweather={this.getWeather} />
         <Weather
           cityname={city}
           weatherIcon={icon}
@@ -120,7 +120,7 @@ class App extends React.Component {
           temp_max={temp_max}
           temp_min={temp_min}
           description={description}
-          error={notFoundError}
+          error={error}
         />
       </AppContainer>
     );

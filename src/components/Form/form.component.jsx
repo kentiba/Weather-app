@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Error from "../Error/error.component";
+
 import { AutocompleteComponent, FormInput } from "./form.styles";
 
 const Form = props => {
@@ -13,13 +13,11 @@ const Form = props => {
             setInput(place.formatted_address);
             props.loadweather(place);
           }}
-          value={input}
+          value={input || ""}
           onChange={e => setInput(e.target.value)}
           onFocus={e => setInput("")}
         />
       </FormInput>
-
-      <div>{props.error ? <Error /> : ""}</div>
     </React.Fragment>
   );
 };

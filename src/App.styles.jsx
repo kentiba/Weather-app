@@ -5,6 +5,7 @@ import rainyImage from "./assets/rainy.jpg";
 import cloudyImage from "./assets/cloudy.jpg";
 import drizzleImage from "./assets/drizzle.jpg";
 import snowyImage from "./assets/snowy.jpg";
+import defaultImage from "./assets/default.jpg";
 import thunderstormImage from "./assets/thunderstorm.jpg";
 
 const renderBackgroundImage = props => {
@@ -32,7 +33,7 @@ const renderBackgroundImage = props => {
       return cloudyImage;
 
     default:
-      return cloudyImage;
+      return defaultImage;
   }
 };
 
