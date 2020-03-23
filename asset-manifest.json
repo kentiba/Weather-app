@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/weather-app/static/css/main.5eeb317c.chunk.css",
-    "main.js": "/weather-app/static/js/main.421e1327.chunk.js",
-    "main.js.map": "/weather-app/static/js/main.421e1327.chunk.js.map",
+    "main.css": "/weather-app/static/css/main.7e29eaf4.chunk.css",
+    "main.js": "/weather-app/static/js/main.416ecfcd.chunk.js",
+    "main.js.map": "/weather-app/static/js/main.416ecfcd.chunk.js.map",
     "runtime-main.js": "/weather-app/static/js/runtime-main.029e69d5.js",
     "runtime-main.js.map": "/weather-app/static/js/runtime-main.029e69d5.js.map",
     "static/css/2.640370f9.chunk.css": "/weather-app/static/css/2.640370f9.chunk.css",
-    "static/js/2.295d59ce.chunk.js": "/weather-app/static/js/2.295d59ce.chunk.js",
-    "static/js/2.295d59ce.chunk.js.map": "/weather-app/static/js/2.295d59ce.chunk.js.map",
+    "static/js/2.654a7158.chunk.js": "/weather-app/static/js/2.654a7158.chunk.js",
+    "static/js/2.654a7158.chunk.js.map": "/weather-app/static/js/2.654a7158.chunk.js.map",
     "index.html": "/weather-app/index.html",
-    "precache-manifest.7013743b74e0383166d85f9943c54fa4.js": "/weather-app/precache-manifest.7013743b74e0383166d85f9943c54fa4.js",
+    "precache-manifest.1f4e166c2a4c49b65dfefeabff4e1b49.js": "/weather-app/precache-manifest.1f4e166c2a4c49b65dfefeabff4e1b49.js",
     "service-worker.js": "/weather-app/service-worker.js",
     "static/css/2.640370f9.chunk.css.map": "/weather-app/static/css/2.640370f9.chunk.css.map",
-    "static/css/main.5eeb317c.chunk.css.map": "/weather-app/static/css/main.5eeb317c.chunk.css.map",
-    "static/js/2.295d59ce.chunk.js.LICENSE.txt": "/weather-app/static/js/2.295d59ce.chunk.js.LICENSE.txt",
+    "static/css/main.7e29eaf4.chunk.css.map": "/weather-app/static/css/main.7e29eaf4.chunk.css.map",
+    "static/js/2.654a7158.chunk.js.LICENSE.txt": "/weather-app/static/js/2.654a7158.chunk.js.LICENSE.txt",
     "static/media/clear.jpg": "/weather-app/static/media/clear.3540e52b.jpg",
     "static/media/cloudy.jpg": "/weather-app/static/media/cloudy.2e6afc41.jpg",
     "static/media/drizzle.jpg": "/weather-app/static/media/drizzle.cd7b5419.jpg",
@@ -26,8 +26,8 @@
   "entrypoints": [
     "static/js/runtime-main.029e69d5.js",
     "static/css/2.640370f9.chunk.css",
-    "static/js/2.295d59ce.chunk.js",
-    "static/css/main.5eeb317c.chunk.css",
-    "static/js/main.421e1327.chunk.js"
+    "static/js/2.654a7158.chunk.js",
+    "static/css/main.7e29eaf4.chunk.css",
+    "static/js/main.416ecfcd.chunk.js"
   ]
 }
